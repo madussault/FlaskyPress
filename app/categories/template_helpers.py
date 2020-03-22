@@ -19,9 +19,9 @@ def categories_w_post_count():
         posts = (Post.query.join(Category.posts)
                  .filter(Category.id == c.id, Post.is_published == True).all())
         if posts:
-            dic[c.name] = len(posts)
+            dic[c.name] = (c.slug, len(posts))
     post_count = Post.query.filter_by(categories=None, is_published=True,
                                       is_page=False).count()
     if post_count > 0:
-        dic['uncategorized'] = post_count
+        dic['uncategorized'] = ('uncategorized', post_count)
     return dic
