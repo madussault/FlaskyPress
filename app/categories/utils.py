@@ -30,7 +30,7 @@ def set_categories(fields):
         elif existing_category:
             post_categories.append(existing_category)
         else:
-            c = Category(name=name)
+            c = Category(name=name.strip())
             c.slugify_name()
             post_categories.append(c)
     return post_categories
