@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h5 class="mb-5">Click the "delete" button to permanently delete the following post:</h5>
+    <p class="lead text-center mb-4">"{{ post.title }}"</p>
+    <form class="form-inline justify-content-center" action="" method="post">
+        <button type="submit" class="btn btn-danger" role="button">Delete</button>
+    </form>
+{% endblock %}

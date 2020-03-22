@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+<!-- Page body -->
+{% block content %}
+<form class="form form-basic" method="post" role="form" novalidate>
+  {{ form.hidden_tag() }}
+  <div class="form-group">
+    {{ form.title_field.label }}
+    {{ form.title_field}}
+    {% for error in form.title_field.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+  </div>
+  <div class="form-group">
+    {{ form.content_field.label }}
+    {{ form.content_field }}
+    {% for error in form.content_field.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+  </div>
+  {% if categories_presence() != 'no_categories' %}
+  {{ form.categories_field[0].label }}
+  <div class="form-inline justify-content-between">
+    {% for c in form.categories_field %}
+    {{ c }}
+    {% endfor %}
+    <small id="passwordHelpBlock" class="form-text text-muted mb-4">
+      Limit of 3 categories per post. Each field accepts 1 category.
+    </small>
+    {% for error in form.categories_field.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <div class="form-check">
+    {{ form.publish }}
+    {{ form.publish.label }}
+  </div>
+  <div class="form-group">
+    <div class="d-flex">
+      {% if request.path == url_for('main.create') %}
+      {{ form.create }}
+      {% else %}
+      {{ form.save }}
+      {% endif %}
+      {{ form.preview }}
+      <a class="btn btn-danger" role="button" type="submit" href="{{ url_for('main.index') }}">Cancel</a>
+      {% if post and request.path == url_for('main.edit', slug=post.slug) %}
+      <a class="align-self-end ml-auto " href="{{ url_for('main.delete', slug=post.slug) }}">Delete post</a>
+      {% endif %}
+    </div>
+  </div>
+</form>
+<!-- Posting instructions -->
+<ul class="list-group mt-5">
+  <li class="list-group-item list-group-item-info">
+    Use the tag <strong>[read_more]</strong> to truncate the content of your posts showing on the /index
+    page.
+  </li>
+  <li class="list-group-item list-group-item-info">
+    <p>To show pictures in your posts, first upload to flickr and copy paste the url in the post body.
+      (ex: https://flic.kr/p/L3RAKJ)</p>
+    <p>Or you can direct link to any image using markdown language:
+      ![alt text](https://link/to/image.png "image alt text")</p>
+  </li>
+  <li class="list-group-item list-group-item-info">
+    <p>To embed rich medias in your posts you can do so by pasting their direct links
+      (ex: https://youtu.be/LembwKDo1Dk)</p>
+    <p>List of the providers that work with this feature: Youtube, Vimeo, SoundCloud, Twitter, Flickr,
+      DailyMotion, SlideShare.</p>
+  </li>
+  <li class="list-group-item list-group-item-info">
+    <p><strong>Note</strong>: To convert an url containing rich medias into an embed (ex: youtube video,
+      flickr image), the url must be placed in it's own paragraph without any text surrounding it. Ex:</p>
+    <p>text here....</p>
+    <p>https://youtu.be/LembwKDo1Dk</p>
+    <p>text here....</p>
+  </li>
+  <li class="list-group-item list-group-item-info">
+    Fo styling your text you can use the markdown language.
+    <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Visit here</a>
+    for a quick reference on the syntax.
+  </li>
+</ul>
+{% endblock %}
+

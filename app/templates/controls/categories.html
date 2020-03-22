@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+<!-- Page body -->
+{% block content %}
+<div class="row justify-content-center">
+  <form method="post" role="form" novalidate>
+    {{ form.hidden_tag() }}
+    <p>{{ form.presence_field.label }}</p>
+    {% for subfield in form.presence_field %}
+    <div class="form-check">
+      {{ subfield(class_="form-check-input") }}
+      {{ subfield.label }}
+    </div>
+    {% endfor %}
+    <br>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-block">Save</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

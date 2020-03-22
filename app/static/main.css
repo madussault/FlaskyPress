@@ -1,0 +1,133 @@
+/**
+ * main.css
+ */
+
+body {
+    padding-top: 56px
+}
+
+.container {
+    max-width: 1170px /* Max width taken by the content and the navbar. */
+}
+
+.container img {
+    /* Images added to posts. */
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.container iframe,
+.twitter-tweet {
+    /* Embedded tweets. */
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important
+}
+
+.navbar-visible-logged .nav-item {
+/* Spacing between the items on the left side of the navbar when a user is logged. */
+    padding-right: 10px
+}
+
+.align-text-icon {
+/* Align text hyperlinks with some svg icons. */
+    vertical-align: bottom;
+    margin-bottom: 0.20rem
+}
+
+.footer-icons-vertical-spacing {
+/* */
+    margin-bottom: 1.2rem
+}
+
+.icons-bar {
+  font-size: 0rem;
+}
+
+.icons-bar svg {
+  margin-left: 0.3rem;
+}
+
+.search-icon {
+/* Position the svg search icon in the search bar. */
+    vertical-align: middle
+}
+
+#categories-card-body {
+/* */
+    padding: 0
+}
+
+.alert {
+    /* Flash messages. */
+    margin-top: 23px
+}
+
+.time {
+    /* Timestamp in posts. */
+    font-style: italic
+}
+
+.title-content-divider {
+    /* Timestamp in posts. */
+    margin-bottom: 4rem
+}
+
+#category_field {
+    width: 30%
+}
+
+select.form-control{
+    width:auto;
+    display: inline-block;
+    float: right
+}
+
+blockquote {
+    background:#f6f8fa;
+    border-left:10px solid #ccc;
+    margin:1.5em 10px;
+    padding:.5em 10px;
+    quotes:"\201C""\201D""\2018""\2019"
+}
+blockquote:before {
+    color:#ccc;
+    content:open-quote;
+    font-size:4em;
+    line-height:.1em;
+    margin-right:.25em;
+    vertical-align:-.4em
+}
+blockquote p {
+    display:inline
+}
+
+/**
+ * Tables.
+ */
+
+dl {
+    border: 1px solid rgba(0,0,0,.1);
+    padding: 0.5em
+}
+
+dt {
+    float: left;
+    clear: left;
+    width: 100px;
+    text-align: right;
+    font-weight: bold;
+    color: black
+}
+
+dt::after {
+    content: ":"
+}
+
+dd {
+    margin: 0 0 0 110px;
+    padding: 0 0 0.5em 0
+}

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+<!-- Page body -->
+{% block content %}
+<form method="post" role="form" novalidate>
+  {{ form.hidden_tag() }}
+  <div class="form-group">
+    {{ form.title_field.label }}
+    {{ form.title_field}}
+    {% for error in form.title_field.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+  </div>
+  <div class="form-group">
+    {{ form.content_field.label }}
+    {{ form.content_field }}
+    {% for error in form.content_field.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+  </div>
+  <div class="form-check">
+    {{ form.publish }}
+    {{ form.publish.label }}
+  </div>
+  <div class="form-group d-flex">
+    {% if request.path == url_for('pages.create') %}
+    {{ form.create }}
+    {% else %}
+    {{ form.save }}
+    {% endif %}
+    {{ form.preview }}
+    <a class="btn btn-danger" role="button" type="submit" href="{{ url_for('main.index') }}">Cancel</a>
+    {% if page and request.path == url_for('pages.edit', slug=page.slug) %}
+    <a class="align-self-end ml-auto" href="{{ url_for('pages.delete', slug=page.slug) }}">Delete page</a>
+    {% endif %}
+  </div>
+</form>
+<!-- Posting instructions -->
+<ul class="list-group mt-5">
+  <li class="list-group-item list-group-item-info">
+    Published pages will be made accessible from the navbar for the non-logged in users.
+  </li>
+  <li class="list-group-item list-group-item-info">
+    Use the tag <strong>[read_more]</strong> to truncate the content of your page showing on the /search
+    page.
+  </li>
+  <li class="list-group-item list-group-item-info">
+    <p>To show pictures in your pages, first upload to flickr and copy paste the url in the page's body.
+      (ex: https://flic.kr/p/L3RAKJ)</p>
+    <p>Or you can direct link to any image using the markdown language:
+      ![alt text](https://link/to/image.png "image alt text")</p>
+  </li>
+  <li class="list-group-item list-group-item-info">
+    <p>To embed rich medias in your pages you can do so by pasting their direct links
+      (ex: https://youtu.be/LembwKDo1Dk)</p>
+    <p>List of the providers that work with this feature: Youtube, Vimeo, SoundCloud, Twitter, Flickr,
+      DailyMotion, SlideShare.</p>
+  </li>
+  <li class="list-group-item list-group-item-info">
+    <p><strong>Note</strong>: To convert an url containing rich medias into an embed (ex: youtube video,
+      flickr image), the url must be placed in it's own paragraph without any text surrounding it. Ex:</p>
+    <p>text here....</p>
+    <p>https://youtu.be/LembwKDo1Dk</p>
+    <p>text here....</p>
+  </li>
+  <li class="list-group-item list-group-item-info">
+    Fo styling your text you can use the markdown language.
+    <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Visit here</a>
+    for a quick reference on the syntax.
+  </li>
+</ul>
+{% endblock %}
+

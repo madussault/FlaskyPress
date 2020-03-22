@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form class="form-row justify-content-between" action="" method="post" role="form" novalidate>
+  {{ form.hidden_tag() }}
+  <div class="col-9">
+    {{ form.pass_field.label(class_="sr-only") }}
+    <div class="input-group">
+      {{ form.pass_field}}
+      <div class="input-group-append">
+        {{ form.submit }}
+      </div>
+    </div>
+  </div>
+  {% for error in form.pass_field.errors %}
+  <span style="color: red;">[{{ error }}]</span>
+  {% endfor %}
+  <div class="col-auto align-self-center">
+    <div class="form-check mb-2">
+      {{ form.remember_me }}
+      {{ form.remember_me.label(class_="form-check-label") }}
+    </div>
+  </div>
+</form>
+{% endblock %}

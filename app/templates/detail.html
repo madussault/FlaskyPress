@@ -1,0 +1,33 @@
+{% from 'vars.html' import clock_sprite, widgets_in_sidebar with context %}
+{% from 'macros.html' import render_categories %}
+
+{% if widgets_in_sidebar %}
+{% extends "two_cols_layout.html" %}
+{% else %}
+{% extends "base.html" %}
+{% endif %}
+
+{% block page_header %}
+<!-- Post Title -->
+<div class="mt-4">
+  <h1>{{ post.title }}</h1>
+</div>
+<!-- Date/Time -->
+{% if not post.is_page %}
+<div class="time d-inline">
+  {{ clock_sprite }} Posted {{ post.timestamp.strftime('%m/%d/%Y at %I:%M%p') }}
+</div>
+<div class="d-inline">
+  {{ render_categories(post, request.path) }}
+</div>
+{% endif %}
+
+<hr class="title-content-divider mt-3">
+{% endblock %}
+
+
+<!-- Post Content -->
+{% block content %}
+{{ post.html_content | remove_read_more | safe }}
+{% endblock %}
+

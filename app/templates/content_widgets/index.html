@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if published_content_widgets %}
+<h2 class="text-center font-weight-light">Published Widgets</h2>
+<ul class="list-group mt-5">
+  <!-- Widget Title -->
+  {% for pcw in published_content_widgets %}
+  <li class="list-group-item">
+    <h3>
+      <a href="{{ url_for('content_widgets.edit', slug=pcw.slug) }}">{{ pcw.title }}</a>
+    </h3>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% if draft_content_widgets %}
+<h2 class="text-center font-weight-light mt-5">Draft Widgets</h2>
+<ul class="list-group mt-5">
+  <!-- Widget Title -->
+  {% for dcw in draft_content_widgets %}
+  <li class="list-group-item">
+    <h3>
+      <a href="{{ url_for('content_widgets.edit', slug=dcw.slug) }}">{{ dcw.title }}</a>
+    </h3>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}

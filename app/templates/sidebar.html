@@ -1,0 +1,46 @@
+{% from 'vars.html' import search_sprite %}
+
+{% for widget_name in ordered_widgets() %}
+{% if widget_name == 'Search Bar Widget' %}
+<!-- Search Widget -->
+<form method="get" action="{{ url_for('main.search') }}">
+  <div class="input-group">
+    <input class="form-control" name="q" placeholder="Search for..." type="text" aria-label="Search">
+    <div class="input-group-append">
+      <button class="btn-sm btn-primary border-0 " type="submit" role="button">
+        {{search_sprite}}
+      </button>
+    </div>
+  </div>
+</form>
+
+{% elif widget_name == 'Category Widget' %}
+<!-- Categories Widget -->
+{% if categories_w_post_count() %}
+{% set cwpc = categories_w_post_count()  %}
+<div class="card my-4">
+  <h5 class="card-header">Categories</h5>
+  <div id="categories-card-body" class="card-body">
+    <ul class="list-group list-group-flush">
+    {% for category, post_count in cwpc|dictsort %}
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="{{ url_for('categories.index', slug=category) }}">{{ category }}</a>
+        <span class="badge badge-primary badge-pill">{{ post_count }}</span>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endif %}
+
+{% else %}
+<!-- Content Widget -->
+{% set widget = widget_name | get_content_widget %}
+<div class="card my-4">
+  <h5 class="card-header">{{ widget.title }}</h5>
+  <div class="card-body">
+    {{ widget.html_content }}
+  </div>
+</div>
+{% endif %}
+{% endfor %}

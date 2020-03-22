@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+<!-- Page body -->
+{% block content %}
+<div class="row justify-content-center">
+  <form method="post" role="form" novalidate>
+    {{ form.hidden_tag() }}
+    <p>{{ form.placement_field.label }}</p>
+    {% for subfield in form.placement_field %}
+    <div class="form-check">
+      {{ subfield(class_="form-check-input") }}
+      {{ subfield.label }}
+    </div>
+    {% endfor %}
+    <br>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-block">Save</button>
+    </div>
+  </form>
+</div>
+<!-- additional explanations -->
+<ul class="list-group mt-5">
+  <li class="list-group-item list-group-item-info">
+    If you choose the option <strong>Remove search bar</strong> the site's
+    search functionality will be completely disabled.
+  </li>
+</ul>
+{% endblock %}

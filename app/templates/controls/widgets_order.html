@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+<!-- Page body -->
+{% block content %}
+<div class="d-flex align-items-center flex-column">
+  <form action="" method="POST" role="form" novalidate>
+    {{ form.hidden_tag() }}
+    {% set field_error = namespace(message='') %}
+    {% for field in form if field.widget.input_type != 'hidden' %}
+    <div class="form-group">
+      {{ field.label(class_='mr-5 pt-1') }}
+      {{ field }}
+    </div>
+    {% for error in field.errors %}
+    {% set field_error.message = error %}
+    {% endfor %}
+    {% endfor %}
+    <br>
+    {% if field_error.message %}
+    <p class="text-center" style="color: red;">[{{ field_error.message }}]</p>
+    {% endif %}
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-block">Save</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% from 'macros.html' import social_icon %}
+
+<footer class="mt-5 mb-2">
+  <hr>
+  <div class="d-flex">
+    <div>
+      {% if config.COPYRIGHT %}
+      {{ config.COPYRIGHT | safe }}
+      {% endif %}
+    </div>
+    <div class="ml-auto icons-bar">
+      {% for social_name, address in get_socials().items() %}
+      {% if social_name == 'Email:' %}
+      <a href="mailto:{{address}}">{{ social_icon(social_name) }}</a>
+      {% else %}
+      <a href="{{address}}">{{ social_icon(social_name) }}</a>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</footer>

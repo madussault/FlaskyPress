@@ -1,0 +1,49 @@
+{% from 'macros.html' import post_url, set_title, render_categories with context %}
+{% from 'vars.html' import clock_sprite, widgets_in_sidebar with context %}
+
+{% if widgets_in_sidebar %}
+{% extends "two_cols_layout.html" %}
+{% else %}
+{% extends "base.html" %}
+{% endif %}
+
+<!-- Header -->
+{% block content_title %}
+{{ set_title(request.path, category_slug) }}
+{% endblock %}
+
+{% block content %}
+{% for post in posts %}
+<div class="mt-5">
+  <!-- Post Title -->
+  <h2 class="mt-4">
+    {{ post_url(post, post.title) }}
+  </h2>
+  <!-- Date/Time -->
+  <div class="time d-inline">
+    {{ clock_sprite }} Posted {{ post.timestamp.strftime('%m/%d/%Y at %I:%M%p') }}
+  </div>
+  <div class="d-inline">
+    {{ render_categories(post, request.path) }}
+  </div>
+  <hr>
+  <!-- Post Content -->
+  {{ post.html_content | read_more(post_url(post, "Read more...")) | safe }}
+</div>
+{% endfor %}
+<!-- Pagination -->
+<nav class="mt-5" aria-label="...">
+  <ul class="pagination">
+    <li class="page-item {% if not prev_url %} disabled{% endif %}">
+      <a class="page-link" href="{{ prev_url or '#' }}">
+        <span aria-hidden="true">&larr;</span>Previous
+      </a>
+    </li>
+    <li class="page-item {% if not next_url %} disabled{% endif %}">
+      <a class="page-link" href="{{ next_url or '#' }}">
+        Next<span aria-hidden="true">&rarr;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+{% endblock %}

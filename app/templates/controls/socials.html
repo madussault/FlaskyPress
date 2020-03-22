@@ -1,0 +1,37 @@
+{% from 'macros.html' import social_icon %}
+
+{% extends "base.html" %}
+
+<!-- Page body -->
+{% block content %}
+<form class="form" method="post" role="form" novalidate>
+  {{ form.hidden_tag() }}
+  {% for field in form if field.label.text != 'CSRF Token' %}
+  <div class="form-group row justify-content-center">
+    <div class="col-md-3">
+      {{ social_icon(field.label.text, true) }}
+      <h3 class="ml-2 d-inline align-middle">{{ field.label }}</h3>
+    </div>
+    <div class="col-md-9">
+      {{ field }}
+    </div>
+    {% for error in field.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+  </div>
+  {% endfor %}
+  <div class="form-group mt-3">
+    <div class="d-flex justify-content-center">
+      <button type="submit" role="button" class="btn btn-primary mr-1">Save</button>
+      <a class="btn btn-danger" role="button" type="submit" href="{{ url_for('main.index') }}">Cancel</a>
+    </div>
+  </div>
+</form>
+<!-- Instructions -->
+<ul class="list-group mt-5">
+  <li class="list-group-item list-group-item-info">
+    To remove a social address from the footer, simply delete the address from it's
+    corresponding field.
+  </li>
+</ul>
+{% endblock %}

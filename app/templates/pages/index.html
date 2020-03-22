@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if published_pages %}
+<h2 class="text-center font-weight-light">Published Pages</h2>
+<ul class="list-group mt-5">
+  {% for pp in published_pages %}
+  <!-- Post Title -->
+  <li class="list-group-item">
+    <h3>
+      <a href="{{ url_for('pages.edit', slug=pp.slug) }}">{{ pp.title }}</a>
+    </h3>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% if draft_pages %}
+<h2 class="text-center font-weight-light mt-5">Draft Pages</h2>
+<ul class="list-group mt-5">
+  {% for dp in draft_pages %}
+  <!-- Post Title -->
+  <li class="list-group-item">
+    <h3>
+      <a href="{{ url_for('pages.edit', slug=dp.slug) }}">{{ dp.title }}</a>
+    </h3>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}

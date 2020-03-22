@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h5 class="text-center mb-4">Click to log out.</h5>
+{{ pages_in_navbar }}
+    <form class="form-inline justify-content-center" action="" method="post">
+        <button type="submit" class="btn btn-primary">Log out</button>
+    </form>
+{% endblock %}
