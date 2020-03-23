@@ -24,13 +24,14 @@ def set_categories(fields):
     """
     post_categories = []
     for name in set(fields):
-        existing_category = Category.query.filter_by(name=name).first()
-        if name in ['', 'uncategorized']:
+        name_stripped = name.strip()
+        existing_category = Category.query.filter_by(name=name_stripped).first()
+        if name_stripped in ['', 'uncategorized']:
             pass
         elif existing_category:
             post_categories.append(existing_category)
         else:
-            c = Category(name=name.strip())
+            c = Category(name=name_stripped)
             c.slugify_name()
             post_categories.append(c)
     return post_categories
