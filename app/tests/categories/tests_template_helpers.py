@@ -57,7 +57,7 @@ class AppTemplateGlobal(TestCase):
         dummy_post(categories=["birds", "dogs"], slug="post_1")
         dummy_post(categories=["birds"], slug="post_2")
         dic = categories_w_post_count()
-        self.assertEqual(dic["birds"], 2,
+        self.assertEqual(dic["birds"][1], 2,
                          "Total number of posts posted under our dummy "
                          "category is not what is expected")
 
