@@ -142,7 +142,7 @@ The other configuration attributes can be left at their default value.
 - #### Configuring The Use Of Categories:
     Categories can be displayed in two different ways by our app. The first one is on 
     the post itself in it's header section. The second one is by listing all
-    the blog categories in a sidebar widget. It also possible not to use 
+    the blog categories in a sidebar widget. It is also possible not to use 
     any category at all by disabling the feature. These choices can all be made 
     on the configuration page that we reach by first clicking on the `Controls` 
     dropdown menu in the sidebar and then after clicking on `Categories`.
