@@ -108,7 +108,7 @@ The other configuration attributes can be left at their default value.
     
 - #### Drafts:
     Posts and pages can be saved as drafts. While creating or editing a 
-    post/page, f the `Publish Now` box is left unchecked at the moment of 
+    post/page, if the `Publish Now` box is left unchecked at the moment of 
     saving, the post/page will be saved as a draft instead of being published. 
     Drafts can be consulted by a logged-in user by clicking on the `Drafts` 
     hyperlink in the menu.
