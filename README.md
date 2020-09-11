@@ -107,7 +107,7 @@ The other configuration attributes can be left at their default values.
     
 - #### Drafts:
     Posts and pages can be saved as drafts. While creating or editing a 
-    post/page, f the `Publish Now` box is left unchecked at the moment of 
+    post/page, if the `Publish Now` box is left unchecked at the moment of 
     saving, the post/page will be saved as a draft instead of being published. 
     Drafts can be viewed by a logged-in user by clicking on the `Drafts` 
     hyperlink in the menu.
@@ -141,7 +141,7 @@ The other configuration attributes can be left at their default values.
 - #### Configuring The Use Of Categories:
     Categories can be displayed in two different ways by our app. The first one is on 
     the post itself in it's header section. The second one is by listing all
-    the blog categories in a sidebar widget. It also possible not to use 
+    the blog categories in a sidebar widget. It is also possible not to use 
     any category at all by disabling the feature. These choices can all be made 
     on the configuration page that we reach by first clicking on the `Controls` 
     dropdown menu in the sidebar and then after clicking on `Categories`.
