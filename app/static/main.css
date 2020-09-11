@@ -26,55 +26,48 @@ html {
 .container iframe,
 .twitter-tweet {
     /* Embedded tweets. */
-    display: block !important;
     margin-left: auto !important;
     margin-right: auto !important
 }
 
 .navbar-visible-logged .nav-item {
-/* Spacing between the items on the left side of the navbar when a user is logged. */
+    /* Spacing between the items on the left side of the navbar when a user is logged. */
     padding-right: 10px
 }
 
 .align-text-icon {
-/* Align text hyperlinks with some svg icons. */
+    /* Align text hyperlinks with some svg icons. */
     vertical-align: bottom;
     margin-bottom: 0.20rem
 }
 
-.footer-icons-vertical-spacing {
-/* */
-    margin-bottom: 1.2rem
-}
-
-.icons-bar {
-  font-size: 0rem;
-}
-
 .icons-bar svg {
-  margin-left: 0.3rem;
-  float: right;
+    /* Positions svg icons to the right and separate them with proper spacing. */
+    margin-left: 0.3rem;
+    float: right;
+    margin-bottom: 0.3rem;
 }
 
 @media screen and (max-width: 768px) {
-  .icons-bar svg {
-      float: none;
-      margin-left: 0;
-      margin-right: 0.3rem;
-  }
+    .icons-bar svg {
+        float: none;
+        margin-left: 0;
+        margin-right: 0.3rem;
+    }
 
   .icons-bar {
-      margin-top: 1rem;
-  }
+        /* Brings space between the copyright notice and the icons bars. */
+        margin-top: 1rem;
+    }
 }
 
 .search-icon {
-/* Position the svg search icon in the search bar. */
+    /* Position the svg search icon in the search bar. */
     vertical-align: middle
 }
 
-#categories-card-body {
-/* */
+.card-list-padding {
+    /* Remove padding for the list elements. */
     padding: 0
 }
 
@@ -94,32 +87,35 @@ html {
 }
 
 #category_field {
+    /* Where we input the category names. */
     width: 30%
 }
 
-select.form-control{
-    width:auto;
+select.form-control {
+    /* Positions the drop-down menu for the choices and their corresponding labels. These elements are dynamically
+    generated. */
+    width: auto;
     display: inline-block;
     float: right
 }
 
 blockquote {
-    background:#f6f8fa;
-    border-left:10px solid #ccc;
-    margin:1.5em 10px;
-    padding:.5em 10px;
-    quotes:"\201C""\201D""\2018""\2019"
+    background: #f6f8fa;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: .5em 10px;
+    quotes: "\201C""\201D""\2018""\2019"
 }
 blockquote:before {
-    color:#ccc;
-    content:open-quote;
-    font-size:4em;
-    line-height:.1em;
-    margin-right:.25em;
-    vertical-align:-.4em
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: .1em;
+    margin-right: .25em;
+    vertical-align: -.4em
 }
 blockquote p {
-    display:inline
+    display: inline
 }
 
 /**
