@@ -99,10 +99,9 @@ The other configuration attributes can be left at their default values.
      ``` 
 - #### Adding Pages To The Navigation Bar:
     New pages can be created and their link added to the navigation bar by 
-    going to to the following page: first we click on the `Pages` dropdown menu
-    in the sidebar and then after we click on `Create Page`. If we want to 
-    list all the published and unpublished pages we have created so far, we choose 
-    `Pages Index` in the same dropdown menu.
+    going to `Pages` > `Create Page` in the navigation bar. If we want to 
+    list all the published and unpublished pages we have created so far, we go
+    to `Pages` > `Pages Index`.
 
     
 - #### Drafts:
@@ -134,24 +133,20 @@ The other configuration attributes can be left at their default values.
    
 - #### Changing Search Bar Placement:
     If we want to move the search bar from the navigation bar to the sidebar or
-    vice-versa, the configuration page for this feature can be accessed by first 
-    clicking on the `Controls` dropdown menu in the sidebar and then after 
-    clicking on `Search Bar`.
+    vice-versa, the configuration page for this feature can be accessed by 
+    clicking on `Controls` > `Search Bar` in the navigation bar.
     
 - #### Configuring The Use Of Categories:
     Categories can be displayed in two different ways by our app. The first one is on 
     the post itself in it's header section. The second one is by listing all
     the blog categories in a sidebar widget. It is also possible not to use 
     any category at all by disabling the feature. These choices can all be made 
-    on the configuration page that we reach by first clicking on the `Controls` 
-    dropdown menu in the sidebar and then after clicking on `Categories`.
+    on the configuration page that we reach by clicking on `Controls` > `Categories` in the navigation bar.
     
 - #### Displaying Social Addresses:
-    To access the page allowing us to add social addresses in the footer, we must
-    first click on the `Controls` dropdown menu in the sidebar and then after 
-    click on `Social`.
+    To access the page allowing us to add social addresses in the footer, we click on `Controls` > `Social` in the
+     navigation bar.
     
 - #### Changing Sidebar Widget Orders:
-    To access the page letting us reorder the widgets in the sidebar we first 
-    click on the `Controls` dropdown menu in the sidebar and then after on 
-    `Widget Orders`.
+    To access the page letting us reorder the widgets in the sidebar we 
+    click on `Controls` > `Widget Orders` in the navigation bar.
