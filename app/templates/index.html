@@ -21,7 +21,7 @@
   </h2>
   <!-- Date/Time -->
   <div class="time d-inline">
-    {{ clock_sprite }} Posted {{ post.timestamp.strftime('%m/%d/%Y at %I:%M%p') }}
+    {{ clock_sprite }} Posted {{ post.timestamp.strftime('%m/%d/%Y at %I:%M %p') }}
   </div>
   <div class="d-inline">
     {{ render_categories(post, request.path) }}
