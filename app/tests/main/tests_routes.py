@@ -307,7 +307,7 @@ class PreviewPosts(TestCase):
             self.assertIn(b'Preview of &#34;test title&#34;', response.data,
                           "Title does not tells us that we are on the"
                           " <slug>/preview page.")
-            time = datetime.utcnow().strftime('%m/%d/%Y at %I:%M%p')
+            time = datetime.utcnow().strftime('%m/%d/%Y at %I:%M %p')
             time_ref = 'Posted ' + time
             self.assertIn(bytes(time_ref, 'utf-8'), response.data,
                           "Timestamp can not be found on the post preview.")
