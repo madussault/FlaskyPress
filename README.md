@@ -1,6 +1,4 @@
-FlaskyPress is a basic blogging application written in python and powered by
- the Flask framework. The project was started to learn back-end web
-  development.
+FlaskyPress is a simple blogging platform built with Python and the Flask framework, created as a learning project for back-end web development.
  
  To see a live demo of the application click [here.](https://www.madussault.dev/demos/flaskypress/)
  
@@ -10,8 +8,7 @@ FlaskyPress is a basic blogging application written in python and powered by
  - Can preview posts before saving.
  - Can save posts as drafts.
  - Posts can be classified by categories.
- - Converts URLs into embeds from pages containing rich medias
-  (Youtube, Flickr, Twitter, etc..) for use in the creation of posts.
+ - Transforms URLs from rich media platforms (YouTube, Flickr, Twitter, etc.) into embeds for seamless integration with other content.
  - Search engine to find specific posts.
  - Can display any text or medias in the sidebar using content widgets.
  - Can re-order widgets in the sidebar.
