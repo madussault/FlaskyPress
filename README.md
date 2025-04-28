@@ -25,9 +25,7 @@ To configure this application we recommend using an `.env` file. The attributes 
 - **SECRET_KEY**: Input your own unique and secret key here. It will be used
  to protect against CSRF attack and to cryptographically sign cookies.
 
-- **SQLALCHEMY_DATABASE_URI**: For storing the posts and passwords of the users into a
- database we use SQLAlchemy, which is a program allowing us to manage a
-  database in a more pythonic way than using raw SQL queries. SQLAlchemy 
+- **SQLALCHEMY_DATABASE_URI**: For database storage we use the SQLAlchemy ORM. SQLAlchemy 
   supports a variety of relational databases ( Postgresql, MySQL
   , etc...) but out of the box FlaskyPress is configured to use SQLite.
   If you are fine with using this database you can omit the `DATABASE_URL`
