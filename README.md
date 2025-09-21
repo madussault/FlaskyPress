@@ -28,8 +28,7 @@ The goal of FlaskyPress is to provide a streamlined blogging and publishing expe
     
 ## Configuring the app
 
-Before running FlaskyPress, you need to configure a few settings.  
-All configuration values are stored in a `config.py` file located at the root of the project.
+Before running FlaskyPress, you need to configure a few settings. All configuration values are stored in a `config.py` file located at the root of the project.
 
 - **SECRET_KEY**: Set a secret key to enable session management and secure cookies.
 
@@ -42,13 +41,11 @@ All configuration values are stored in a `config.py` file located at the root of
      
     ```SQLALCHEMY_DATABASE_URI = postgres+psycopg2://postgres:password@localhost:5432/books```
      
-- **SITE_NAME**:  Defines the name of your site. This value is displayed as the **site branding** in the navigation menu.  
-  It is also used by the email error logger to **identify the application** when sending error notifications.
+- **SITE_NAME**:  Defines the name of your site. This value is displayed as the **site branding** in the navigation menu. It is also used by the email error logger to **identify the application** when sending error notifications.
 
 - **COPYRIGHT**:  Specifies the copyright information displayed in the **site footer**.
 
-- **URL_PREFIX**:  Used when running the app from a **subdirectory** of your domain.  
-  For example, if your site is accessed at `www.my_website.com/subfolder/` instead of `www.my_website.com`, set this value to the subdirectory path.
+- **URL_PREFIX**:  Used when running the app from a **subdirectory** of your domain. For example, if your site is accessed at `www.my_website.com/subfolder/` instead of `www.my_website.com`, set this value to the subdirectory path.
 
 
 The following settings, from **MAIL_SERVER** to **FROM_ADDRESS**, are only required if you want to receive email notifications when the application encounters an error. These values configure the **mail logger** that sends error reports:
@@ -68,8 +65,7 @@ The following settings, from **MAIL_SERVER** to **FROM_ADDRESS**, are only requi
 - **FROM_ADDRESS**: The email address used as the sender for error reports.
 
 
-The remaining configuration attributes can typically be left at their **default values**.  
-If you want to understand the purpose of each setting, detailed documentation is available in the **`Config`** class inside the `config.py` file.
+The remaining configuration attributes can typically be left at their **default values**. If you want to understand the purpose of each setting, detailed documentation is available in the **`Config`** class inside the `config.py` file.
 
 
 ## Usage
@@ -82,8 +78,6 @@ If you want to understand the purpose of each setting, detailed documentation is
     ```
     http://127.0.0.1:5000/register
     ```
-    **Note**: For the moment the registration system can only accept one user.
-    Multi-user registration will be implemented in the future.
     
 - #### Login:
     The web interface of the app does not include an hyperlink to the `/login`
@@ -91,7 +85,8 @@ If you want to understand the purpose of each setting, detailed documentation is
     type the address in the browser: 
      ```
      http://127.0.0.1:5000/login
-     ``` 
+     ```
+     
 - #### Adding Pages To The Navigation Bar:
     New pages can be created and their link added to the navigation bar by 
     going to `Pages` > `Create Page` in the navigation bar. If we want to 
