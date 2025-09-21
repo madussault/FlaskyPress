@@ -1,76 +1,76 @@
-FlaskyPress is a simple blogging platform built with Python and the Flask framework, created as a learning project for back-end web development.
+FlaskyPress is a lightweight content management system (CMS) built with Flask.
+It was initially developed as a personal project to learn and practice modern web development, while creating a functional and extensible platform for managing website content.
+
+The goal of FlaskyPress is to provide a streamlined blogging and publishing experience without the complexity of larger platforms like WordPress. It’s a great starting point for developers who want to:
+
+- Experiment with building a CMS from the ground up.
+- Customize and extend a web application using Flask’s modular architecture.
+- Quickly set up a simple blog or content-driven site.
  
  To see a live demo of the application click [here.](https://www.madussault.dev/demos/flaskypress/)
  
- ## Features:
- 
- - Can write posts using the [markdown language](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
- - Can preview posts before saving.
- - Can save posts as drafts.
- - Posts can be classified by categories.
- - Transforms URLs from rich media platforms (YouTube, Flickr, Twitter, etc.) into embeds for seamless integration with other content.
- - Search engine to find specific posts.
- - Can display any text or medias in the sidebar using content widgets.
- - Can re-order widgets in the sidebar.
- - Link to social accounts in the footer.
- - Can add new pages and link to them in the navigation bar.
- - Dynamically generated sitemap.
- - Can be set to send error reports by email.
- - Made fully responsive using Bootstrap 4.
+## Features
+
+- **Markdown Support** – Write posts using the [Markdown language](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) for clean and easy formatting.  
+- **Post Preview** – Preview posts before saving to ensure they look exactly as intended.  
+- **Draft Management** – Save posts as drafts and publish them later when ready.  
+- **Categorization** – Organize posts by assigning them to categories.  
+- **Rich Media Embeds** – Automatically convert URLs from platforms like YouTube, Flickr, and Twitter into embedded content for seamless integration.  
+- **Search Functionality** – Quickly find specific posts using the built-in search engine.  
+- **Custom Sidebar Widgets** – Display any text or media in the sidebar using content widgets.  
+- **Widget Ordering** – Easily reorder sidebar widgets to customize their layout.  
+- **Social Media Links** – Add links to social accounts in the site footer.  
+- **Custom Pages** – Create additional pages and link to them in the navigation bar.  
+- **Dynamic Sitemap** – Automatically generate a sitemap for better site indexing.  
+- **Error Reporting** – Configure the app to send error reports via email.  
+- **Responsive Design** – Built with Bootstrap 4 to ensure a fully responsive layout across devices.
+
     
 ## Configuring the app
 
-To configure this application we recommend using an `.env` file. The attributes to set can be found in the `Config` class. Below we give explanations about some of these attributes.
+Before running FlaskyPress, you need to configure a few settings.  
+All configuration values are stored in a `config.py` file located at the root of the project.
 
-- **SECRET_KEY**: Input your own unique and secret key here. It will be used
- to protect against CSRF attack and to cryptographically sign cookies.
+- **SECRET_KEY**: Set a secret key to enable session management and secure cookies.
 
-- **SQLALCHEMY_DATABASE_URI**: For database storage we use the SQLAlchemy ORM. SQLAlchemy 
-  supports a variety of relational databases ( Postgresql, MySQL
-  , etc...) but out of the box FlaskyPress is configured to use SQLite.
-  If you are fine with using this database you can omit the `DATABASE_URL`
-   attribute from your .env file. But if you would prefer to use an other
-    database, like let's say Postgresql, you would need to specify the path
-     to the database in the .env file so it can be connected to SQLAlchemy.
-      Example:
+- **SQLALCHEMY_DATABASE_URI**:  FlaskyPress uses the **SQLAlchemy ORM** for database management. SQLAlchemy supports a variety of relational databases such as **PostgreSQL**, **MySQL**, and more.  
+
+  By default, FlaskyPress is configured to use **SQLite**, which works out of the box without additional setup.  
+  If you’re fine with using SQLite, you can **omit** the `DATABASE_URL` entry from your `.env` file.
+
+  However, if you prefer to use another database (for example, PostgreSQL), you must specify the connection URL in your `.env` file so FlaskyPress can connect through SQLAlchemy.
      
-     ```SQLALCHEMY_DATABASE_URI = postgres+psycopg2://postgres:password@localhost:5432/books```
+    ```SQLALCHEMY_DATABASE_URI = postgres+psycopg2://postgres:password@localhost:5432/books```
      
-- **SITE_NAME**: Will show up as site branding in the menu. It will also be
- used by the mail logger to identify our app when an error message is being
-  sent.
-  
-- **COPYRIGHT**: Copyright info that will be shown in the footer.
+- **SITE_NAME**:  Defines the name of your site. This value is displayed as the **site branding** in the navigation menu.  
+  It is also used by the email error logger to **identify the application** when sending error notifications.
 
-- **URL_PREFIX**: Only needed when we want to run our app from a domain subdirectory,
-            ex: `www.my_website.com/subfolder/` instead of `www.my_website.com`.
+- **COPYRIGHT**:  Specifies the copyright information displayed in the **site footer**.
 
-The next attributes from **MAIL_SERVER** to **FROM_ADDRESS** only need to be
- set if we want to be informed by email when the application crashes. These
- attributes are used to configure the mail logger sending us error reports :
+- **URL_PREFIX**:  Used when running the app from a **subdirectory** of your domain.  
+  For example, if your site is accessed at `www.my_website.com/subfolder/` instead of `www.my_website.com`, set this value to the subdirectory path.
 
-- **MAIL_SERVER**: Address of the email server our mail logger is going to
- use to send our email reports (ex, `smtp.googlemail.com`). If this value is
-  not
-  set the mail logger will be disabled.
-    
-- **MAIL_PORT**: Port used by the mail server of your email service provider. Consult their website to find out.
 
-- **MAIL_USE_TLS**: Enable encryption when sending email, which prevent
- eavesdropping. Set to `True` or `False`.
- 
-- **MAIL_USERNAME**: Username for the email account sending the error reports.
+The following settings, from **MAIL_SERVER** to **FROM_ADDRESS**, are only required if you want to receive email notifications when the application encounters an error. These values configure the **mail logger** that sends error reports:
 
-- **MAIL_PASSWORD**: Password for the email account sending the error reports.
+- **MAIL_SERVER**: The address of the email server used to send error reports (e.g., `smtp.googlemail.com`). If this value is not set, the mail logger will be disabled.
 
-- **ADMINS**: Here we store a list of the email addresses that will receive
- the error reports, so your own email address should be in that list.
- 
-- **FROM_ADDRESS**: Email address of the account sending the error reports.
+- **MAIL_PORT**: The port used by your email service provider’s server. Check their documentation for the correct value.
 
-The other configuration attributes can be left at their default values.
- If there's a need to know what role each of them are playing, documentation 
- can be found in the `Config` class of the `config.py` file.
+- **MAIL_USE_TLS**: Enable encryption for outgoing emails to prevent eavesdropping. Set to `True` or `False`.
+
+- **MAIL_USERNAME**: The username of the email account that will send the error reports.
+
+- **MAIL_PASSWORD**: The password of the email account that will send the error reports.
+
+- **ADMINS**: A list of email addresses that will receive error reports. Include your own email address here to receive notifications.
+
+- **FROM_ADDRESS**: The email address used as the sender for error reports.
+
+
+The remaining configuration attributes can typically be left at their **default values**.  
+If you want to understand the purpose of each setting, detailed documentation is available in the **`Config`** class inside the `config.py` file.
+
 
 ## Usage
 
