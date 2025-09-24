@@ -12,7 +12,7 @@ The goal of FlaskyPress is to provide a streamlined blogging and publishing expe
 ## Features
 
 - **Markdown Support** – Write posts using the [Markdown language](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) for clean and easy formatting.  
-- **Post Preview** – Preview posts before saving to ensure they look exactly as intended.  
+- **Post Preview** – Preview posts before saving.  
 - **Draft Management** – Save posts as drafts and publish them later when ready.  
 - **Categorization** – Organize posts by assigning them to categories.  
 - **Rich Media Embeds** – Automatically convert URLs from platforms like YouTube, Flickr, and Twitter into embedded content for seamless integration.  
@@ -70,44 +70,54 @@ The remaining configuration attributes can typically be left at their **default 
 
 ## Usage
 
-- #### Register:
-    To be capable to post using the app we first need to register as an admin.
-    To do so we simply go to the `/register` page and enter a new password.
-    After logging in we'll have full privilege.
+### Register
+To start posting content, you must first **register as an admin user**.  
+Navigate to the `/register` page, set a new password, and log in.  
+Once logged in, you will have full administrative privileges.
 
     ```
     http://127.0.0.1:5000/register
     ```
+---
     
-- #### Login:
-    The web interface of the app does not include an hyperlink to the `/login`
-    page. To reach the login form that will allow us to log in as an admin we instead
-    type the address in the browser: 
+### Login
+The web interface does **not** include a direct link to the `/login` page.  
+To log in as an admin, manually enter the URL in your browser:
+
      ```
      http://127.0.0.1:5000/login
      ```
-     
-- #### Adding Pages To The Navigation Bar:
-    New pages can be created and their link added to the navigation bar by 
-    going to `Pages` > `Create Page` in the navigation bar. If we want to 
-    list all the published and unpublished pages we have created so far, we go
-    to `Pages` > `Pages Index`.
+---
 
+### Adding Pages to the Navigation Bar
+You can create new pages and add them to the site’s navigation bar by going to:  
+`Pages` > `Create Page`.
+
+To view a list of all published and unpublished pages, navigate to:  
+`Pages` > `Pages Index`.
+
+---
     
-- #### Drafts:
-    Posts and pages can be saved as drafts. While creating or editing a 
-    post/page, if the `Publish Now` box is left unchecked at the moment of 
-    saving, the post/page will be saved as a draft instead of being published. 
-    Drafts can be viewed by a logged-in user by clicking on the `Drafts` 
-    hyperlink in the menu.
+### Drafts
+Posts and pages can be saved as **drafts** instead of being immediately published.
+
+- While creating or editing a post/page, **uncheck** the `Publish Now` box before saving.
+- The item will then be saved as a draft rather than published.
+
+To view drafts, log in and click the `Drafts` link in the menu.
+
+---
   
-- #### URL to Embeds:
-    To embed rich medias from select providers (Youtube, Twitter, Flickr, etc...) 
-    we can simply copy/paste the web address to the media in the body of our
-    post and FlaskyPress will convert it into an embed when rendering the post.
-   
-    **Note:** For this feature to work the URL must be placed in it's own
-    paragraph without any text surrounding it. Example:
+### Embedding Rich Media
+FlaskyPress supports automatic embedding of rich media from providers such as **YouTube**, **Twitter**, and **Flickr**.
+
+To embed media:
+
+1. Copy and paste the URL of the media directly into the body of your post.
+2. Make sure the URL is **in its own paragraph**, with no surrounding text.
+
+**Example:**
+
     ```
     text here...
 
@@ -115,28 +125,41 @@ The remaining configuration attributes can typically be left at their **default 
 
     text here...
     ```
-- #### URL to Hyperlink:
-    The URLs typed in the body of our posts will be rendered by the application
-    as clickable links instead of plain text at the moment of viewing. This
-    feature will not be applied to URLs of pages hosting select rich medias
-   (Youtube videos, Flickr images, etc...).
-   
-- #### Changing Search Bar Placement:
-    If we want to move the search bar from the navigation bar to the sidebar or
-    vice-versa, the configuration page for this feature can be accessed by 
-    clicking on `Controls` > `Search Bar` in the navigation bar.
-    
-- #### Configuring The Use Of Categories:
-    Categories can be displayed in two different ways by our app. The first one is on 
-    the post itself in it's header section. The second one is by listing all
-    the blog categories in a sidebar widget. It is also possible not to use 
-    any category at all by disabling the feature. These choices can all be made 
-    on the configuration page that we reach by clicking on `Controls` > `Categories` in the navigation bar.
-    
-- #### Displaying Social Addresses:
-    To access the page allowing us to add social addresses in the footer, we click on `Controls` > `Social` in the
-     navigation bar.
-    
-- #### Changing Sidebar Widget Orders:
-    To access the page letting us reorder the widgets in the sidebar we 
-    click on `Controls` > `Widget Orders` in the navigation bar.
+### Automatic Hyperlinks
+Plain URLs included in the body of a post are automatically rendered as **clickable links** when viewed.
+
+---
+
+### Moving the Search Bar
+You can customize where the search bar appears:
+
+- In the **navigation bar**, or  
+- In the **sidebar**.
+
+To configure this setting, go to:  
+`Controls` > `Search Bar`.
+
+---
+
+### Configuring Categories
+FlaskyPress provides flexible options for how categories are displayed:
+
+1. **On individual posts** – shown in the header of the post.  
+2. **In the sidebar** – displayed in a dedicated category widget.  
+3. **Disabled** – hide categories completely.
+
+To choose your preferred option, go to:  
+`Controls` > `Categories`.
+
+---
+
+### Displaying Social Links
+You can add links to your social profiles, which will be displayed in the footer of the site.  
+To configure these links, navigate to:  
+`Controls` > `Social`.
+
+---
+
+### Changing Sidebar Widget Order
+Reorder sidebar widgets to customize their layout by going to:  
+`Controls` > `Widget Orders`.
