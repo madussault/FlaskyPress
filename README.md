@@ -7,8 +7,6 @@ The goal of FlaskyPress is to provide a streamlined blogging and publishing expe
 - Customize and extend a web application using Flask’s modular architecture.
 - Quickly set up a simple blog or content-driven site.
  
- To see a live demo of the application click [here.](https://www.madussault.dev/demos/flaskypress/)
- 
 ## Features
 
 - **Markdown Support** – Write posts using the [Markdown language](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) for clean and easy formatting.  
